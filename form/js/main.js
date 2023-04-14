@@ -1,5 +1,5 @@
 const groups = ["N102", "N103", "N110", "N122"];
-const places = ["Toshkent", "Farg'ona", "Andijon", "Namangan", "Samarqand", "Buxoro", "Qashqadaryo"];
+const places = ["Toshkent", "Farg'ona", "Andijon", "Namangan", "Samarqand", "Buxoro", "Qashqadaryo", "Xorazm", "Surxandaryo", "Jizzax"];
 const fields = ["Web-Dasturlash", "Frontend", "Backend", "Web-dizayn", "SMM"]
 let pupils = JSON.parse(localStorage.getItem("pupils")) || [];
 let selected = null;
@@ -52,11 +52,12 @@ getPupilFields();
 
 // pupils row
 
-function getPupilRow({ firstName, lastName, group, place, date, field, hasWork, hasFam, id }) {
+function getPupilRow({ firstName, lastName, address, group, place, date, field, hasWork, hasFam, id }) {
   return `<tr>
     <th scope="row">${id + 1}</th>
     <td>${firstName}</td>
     <td>${lastName}</td>
+    <td>${address}</td>
     <td>${group}</td>
     <td>${place}</td>
     <td>${date}</td>
@@ -109,12 +110,13 @@ pupilForm.addEventListener("submit", (e) => {
     let pupil = {
       firstName: pupilForm[1].value,
       lastName: pupilForm[2].value,
-      group: pupilForm[3].value,
-      place: pupilForm[4].value,
-      date: pupilForm[5].value,
-      field: pupilForm[6].value,
-      hasWork: pupilForm[7].checked,
-      hasFam: pupilForm[8].checked,
+      address: pupilForm[3].value,
+      group: pupilForm[4].value,
+      place: pupilForm[5].value,
+      date: pupilForm[6].value,
+      field: pupilForm[7].value,
+      hasWork: pupilForm[8].checked,
+      hasFam: pupilForm[9].checked,
     };
     if (selected || selected === 0) {
       pupils = pupils.map((p, i) => {
@@ -142,12 +144,13 @@ function getPupilsLocalStorage() {
 addBtn.addEventListener("click", () => {
   pupilForm[1].value = "";
   pupilForm[2].value = "";
-  pupilForm[3].value = groups[0];
-  pupilForm[4].value = places[0];
-  pupilForm[5].value = "";
-  pupilForm[6].value = fields[0];
-  pupilForm[7].checked = false;
+  pupilForm[3].value = "";
+  pupilForm[4].value = groups[0];
+  pupilForm[5].value = places[0];
+  pupilForm[6].value = "";
+  pupilForm[7].value = fields[0];
   pupilForm[8].checked = false;
+  pupilForm[9].checked = false;
   sendBtn.innerHTML = "Qo'shish";
   selected = null;
 });

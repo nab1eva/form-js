@@ -49,8 +49,9 @@
             <th scope="col">No</th>
             <th scope="col">Ism</th>
             <th scope="col">Familiya</th>
+            <th scope="col">Address</th>
             <th scope="col">Guruhi</th>
-            <th scope="col">Manzili</th>
+            <th scope="col">Shahar/Vil</th>
             <th scope="col">Tug'ilgan sanasi</th>
             <th scope="col">Sohasi</th>
             <th scope="col">Ishlaydimi</th>
@@ -94,8 +95,8 @@
                   placeholder="Ism"
                   required
                 />
-                <div class="valid-feedback">Rahmat to'ldirganingiz uchun !</div>
-                <div class="invalid-feedback">Iltimos to'ldiring</div>
+                <div class="valid-feedback">To'ldirganingiz uchun rahmat !</div>
+                <div class="invalid-feedback">Iltimos to'ldiring !</div>
               </div>
               <div class="col-12 mb-3">
                 <label for="lastName" class="form-label"
@@ -108,7 +109,21 @@
                   placeholder="Familiya"
                   required
                 />
-                <div class="valid-feedback">Rahmat to'ldirganingiz uchun !</div>
+                <div class="valid-feedback">To'ldirganingiz uchun rahmat !</div>
+                <div class="invalid-feedback">Iltimos to'ldiring !</div>
+              </div>
+              <div class="col-12 mb-3">
+                <label for="Address" class="form-label"
+                  >Addresingizni kiriting:</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="Address"
+                  placeholder="Address"
+                  required
+                />
+                <div class="valid-feedback">To'ldirganingiz uchun rahmat !</div>
                 <div class="invalid-feedback">Iltimos to'ldiring !</div>
               </div>
               <div class="d-flex justify-content-between">
@@ -117,18 +132,12 @@
                     >Guruhni tanlang</label
                   >
                   <select class="form-select" id="pupilGroup" required></select>
-                  <div class="valid-feedback">
-                    Rahmat to'ldirganingiz uchun !
-                  </div>
                 </div>
                 <div class="col-6 mb-3">
                   <label for="pupilPlace" class="form-label"
-                    >Manzilni tanlang</label
+                    >Shahar/Viloyatingizni tanlang</label
                   >
                   <select class="form-select" id="pupilPlace" required></select>
-                  <div class="valid-feedback">
-                    Rahmat to'ldirganingiz uchun !
-                  </div>
                 </div>
               </div>
               <div class="col-12 mb-3 d-flex justify-content-between">
@@ -142,11 +151,11 @@
                     id="pupilCheckDate"
                     required
                   />
+                <div class="invalid-feedback">Iltimos to'ldiring !</div>
+                  
                 </div>
                 <div class="form-label col-6">
-                  <label class="form-label" for="pupilField"
-                    >Yo'nalishi</label
-                  >
+                  <label class="form-label" for="pupilField">Yo'nalishi</label>
                   <select class="form-select" id="pupilField"></select>
                 </div>
               </div>
